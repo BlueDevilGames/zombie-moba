@@ -36,6 +36,5 @@ public class Timer : MonoBehaviour
 
 		//update timeLimitText
 		timeLimit.text = string.Format (timeLimitText, Mathf.FloorToInt (timeLeft));
-		Debug.Log (string.Format (timeLimitText, Mathf.FloorToInt (timeLeft)));
 	}
 }
