@@ -10,20 +10,23 @@ using UnityEngine.UI;
  * 
  * */
 
-public class Timer : MonoBehaviour {
-
-	public string timeLimitText = "Time:";
+public class Timer : MonoBehaviour
+{
+	public string timeLimitText = "Time: {0}s";
 	public float timeLeft = 90;
-	Text timeLimit;
+
+	private Text timeLimit;
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+	{
 		timeLimit = GetComponent<Text> ();
 		timeLimit.text = timeLimitText;
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+	{
 		//update time left accordingly
 		if (timeLeft < 1) {
 			timeLeft = 0;
@@ -32,6 +35,7 @@ public class Timer : MonoBehaviour {
 		}
 
 		//update timeLimitText
-		timeLimit.text = timeLimitText + Mathf.FloorToInt(timeLeft);
+		timeLimit.text = string.Format (timeLimitText, Mathf.FloorToInt (timeLeft));
+		Debug.Log (string.Format (timeLimitText, Mathf.FloorToInt (timeLeft)));
 	}
 }
