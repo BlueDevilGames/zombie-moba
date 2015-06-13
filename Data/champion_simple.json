@@ -1,0 +1,62 @@
+[
+  {
+    "index": 0,
+    "name": "Miriam",
+    "picture": "http://placehold.it/32x32",
+    "attack": 445
+  },
+  {
+    "index": 1,
+    "name": "Coleman",
+    "picture": "http://placehold.it/32x32",
+    "attack": 556
+  },
+  {
+    "index": 2,
+    "name": "Carlene",
+    "picture": "http://placehold.it/32x32",
+    "attack": 783
+  },
+  {
+    "index": 3,
+    "name": "Christian",
+    "picture": "http://placehold.it/32x32",
+    "attack": 626
+  },
+  {
+    "index": 4,
+    "name": "Patricia",
+    "picture": "http://placehold.it/32x32",
+    "attack": 706
+  },
+  {
+    "index": 5,
+    "name": "Misty",
+    "picture": "http://placehold.it/32x32",
+    "attack": 577
+  },
+  {
+    "index": 6,
+    "name": "Fowler",
+    "picture": "http://placehold.it/32x32",
+    "attack": 521
+  },
+  {
+    "index": 7,
+    "name": "Blanchard",
+    "picture": "http://placehold.it/32x32",
+    "attack": 289
+  },
+  {
+    "index": 8,
+    "name": "Maritza",
+    "picture": "http://placehold.it/32x32",
+    "attack": 234
+  },
+  {
+    "index": 9,
+    "name": "Sandoval",
+    "picture": "http://placehold.it/32x32",
+    "attack": 771
+  }
+]
