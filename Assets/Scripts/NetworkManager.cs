@@ -10,7 +10,7 @@ public class NetworkManager : MonoBehaviour
 	
 	private void SpawnPlayer ()
 	{
-		Network.Instantiate (Player, new Vector3 (0f, 5f, 0f), Quaternion.identity, 0);
+		Network.Instantiate (Player, new Vector3 (0f, 20f, 0f), Quaternion.identity, 0);
 	}
 
 	private void StartServer ()
