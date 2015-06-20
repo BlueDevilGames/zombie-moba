@@ -947,6 +947,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   errorText: {fileID: 116972, guid: 57b618eb7d6dd1d4cb2603c8ac972165, type: 2}
   canvas: {fileID: 326474734}
+  playButton: {fileID: 1428050125}
+  settingsButton: {fileID: 1254982403}
+  userNameField: {fileID: 195899346}
 --- !u!4 &1364109092
 Transform:
   m_ObjectHideFlags: 0
