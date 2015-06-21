@@ -188,12 +188,13 @@ MonoBehaviour:
   m_SendPeerInfo: 0
   m_MaxDelay: .00999999978
   m_LogLevel: 1
-  m_PlayerPrefab: {fileID: 185662, guid: 6c1c5e09898c4d8488dc9c06908458f4, type: 2}
-  m_AutoCreatePlayer: 1
+  m_PlayerPrefab: {fileID: 0}
+  m_AutoCreatePlayer: 0
   m_PlayerSpawnMethod: 0
   m_OfflineScene: 
   m_OnlineScene: 
-  m_SpawnPrefabs: []
+  m_SpawnPrefabs:
+  - {fileID: 158536, guid: 8eda235b9fe457c4aad1c8ed8d0d8ded, type: 2}
   m_CustomConfig: 0
   m_MaxConnections: 4
   m_ConnectionConfig:
@@ -1101,6 +1102,14 @@ Prefab:
     - target: {fileID: 22474760, guid: 8eda235b9fe457c4aad1c8ed8d0d8ded, type: 2}
       propertyPath: m_Pivot.y
       value: .5
+      objectReference: {fileID: 0}
+    - target: {fileID: 158536, guid: 8eda235b9fe457c4aad1c8ed8d0d8ded, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11464292, guid: 8eda235b9fe457c4aad1c8ed8d0d8ded, type: 2}
+      propertyPath: m_ServerOnly
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8eda235b9fe457c4aad1c8ed8d0d8ded, type: 2}
