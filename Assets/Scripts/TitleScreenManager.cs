@@ -16,30 +16,13 @@ public class TitleScreenManager : MonoBehaviour
 	private float volume = 1.0f;
 	private string clicked = "";
 
-	// Use this for initialization
-	void Start ()
-	{
-	
-	}
-	
-	// Update is called once per frame
-	void Update ()
-	{
-	
-	}
-
-//	public void setPlayerList (GameObject list)
-//	{
-//		playerList = list;
-//	}
-
 	public void onPlay (InputField userNameInput)
 	{
 		if (!userNameInput.textComponent.text.Equals ("")) {
 			Debug.Log (userNameInput.textComponent.text);
 			playerList.GetComponent<PlayerListManager> ().AddUsername (userNameInput.textComponent.text);
-			userNameInput.enabled = false;
-			Application.LoadLevel ("Champ Select Screen");
+//			userNameInput.enabled = false;
+//			Application.LoadLevel ("Champ Select Screen");
 		} else {
 			GameObject obj = (GameObject)Instantiate (errorText, new Vector3 (0, 0, 0), Quaternion.identity);
 			obj.transform.SetParent (canvas.transform, false);
