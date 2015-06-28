@@ -21,7 +21,7 @@ public class NetworkManager : MonoBehaviour
 	{
 		GameObject obj = (GameObject)Network.Instantiate (playerList, new Vector3 (0f, 0f, 0f), Quaternion.identity, 0);
 		obj.transform.SetParent (canvas, false);
-		temp.GetComponent<TitleScreenManager> ().setPlayerList (obj);
+//		temp.GetComponent<TitleScreenManager> ().setPlayerList (obj);
 	}
 
 	void OnServerInitialized ()

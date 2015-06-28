@@ -12,16 +12,17 @@ public class TitleScreenManager : MonoBehaviour
 	public Button settingsButton;
 	public InputField userNameField;
 
-	private GameObject playerList;
 	private Rect optionsWindow = new Rect ((Screen.width / 2) - 100, Screen.height / 2 - 200, 200, 200);
 	private float volume = 1.0f;
 	private string clicked = "";
 	private bool spawnSettings = false;
 
+	public static string username;
+
 	// Use this for initialization
 	void Start ()
 	{
-	
+		username = "Player";
 	}
 	
 	// Update is called once per frame
@@ -30,18 +31,12 @@ public class TitleScreenManager : MonoBehaviour
 	
 	}
 
-	public void setPlayerList (GameObject list)
-	{
-		playerList = list;
-	}
-
 	public void onPlay (InputField userNameInput)
 	{
 		if (!userNameInput.textComponent.text.Equals ("")) {
-			Debug.Log (userNameInput.textComponent.text);
-			playerList.GetComponent<PlayerListManager> ().AddUsername (userNameInput.textComponent.text);
-			userNameInput.enabled = false;
-			Application.LoadLevel("Champ Select Screen");
+			username = userNameInput.textComponent.text;
+//			userNameInput.enabled = false;
+			Application.LoadLevel ("Champ Select Screen");
 		} else {
 			GameObject obj = (GameObject)Instantiate (errorText, new Vector3 (0, 0, 0), Quaternion.identity);
 			obj.transform.SetParent (canvas.transform, false);

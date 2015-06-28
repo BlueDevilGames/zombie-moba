@@ -14,7 +14,9 @@ using SimpleJSON;
 public class ChampSelectManager : MonoBehaviour
 {
 	const string DATA_FILE_PATH = "Data\\champion_simple.json";
-	const int NUM_CHAMPIONS = 10;
+	public static int NUM_CHAMPIONS = 10;
+	public static string champ;
+	public static JSONNode jsonData;
 
 	public GameObject champSelect;
 	public Transform champSelectLayout;
@@ -23,15 +25,16 @@ public class ChampSelectManager : MonoBehaviour
 	public Transform[] playerLayoutPoints;
 
 	private int numSelected = 0;
-	private JSONNode jsonData;
 
-	// Use this for initialization
+	/// <summary>
+	/// Start this instance. Sets up variables and calls to load data and set up click handlers
+	/// </summary>
 	void Start ()
 	{
+		champ = "";
+
 		// Load and parse champion data from JSON file to instantiate champ images/text
 		loadData ();
-
-		// Add click handlers to images
 	}
 
 	/// <summary>
@@ -50,6 +53,10 @@ public class ChampSelectManager : MonoBehaviour
 		Text txt = obj.GetComponentInChildren<Text> ();
 		txt.text = name;
 		numSelected++;
+		if (numSelected >= 1) {
+			champ = name;
+			Application.LoadLevel ("Loading Screen");
+		}
 	}
 
 	/// <summary>
@@ -63,9 +70,12 @@ public class ChampSelectManager : MonoBehaviour
 			GameObject obj = (GameObject)Instantiate (champSelect, champSelectLayoutPoints [i].position, champSelectLayoutPoints [i].rotation);
 			Transform trans = obj.transform;
 			trans.SetParent (champSelectLayout, true);
+
 			// Fill object with data
 			Text txt = obj.GetComponentInChildren<Text> ();
 			txt.text = jsonData [i] ["name"];
+			
+			// Add click handlers to images
 			Button btn = obj.GetComponentInChildren<Button> ();
 			btn.onClick.AddListener (() => champ_onClick (txt.text));
 		}
