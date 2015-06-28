@@ -6,15 +6,17 @@ public class TitleScreenManager : MonoBehaviour
 {
 
 	public GameObject errorText;
+	public GameObject settingsMenu;
 	public Canvas canvas;
 	public Button playButton;
 	public Button settingsButton;
 	public InputField userNameField;
-	private GameObject playerList;
 
+	private GameObject playerList;
 	private Rect optionsWindow = new Rect ((Screen.width / 2) - 100, Screen.height / 2 - 200, 200, 200);
 	private float volume = 1.0f;
 	private string clicked = "";
+	private bool spawnSettings = false;
 
 	// Use this for initialization
 	void Start ()
@@ -48,8 +50,10 @@ public class TitleScreenManager : MonoBehaviour
 
 	void OnGUI ()
 	{
-		if (clicked.Equals ("Settings")) {
-			optionsWindow = GUI.Window (0, optionsWindow, doOptionsWindow, "My Window"); 
+		if (clicked.Equals ("Settings") && spawnSettings == true) {
+			GameObject obj = (GameObject)Instantiate (settingsMenu, new Vector3 (0, 0, 0), Quaternion.identity);
+			obj.transform.SetParent (canvas.transform, false);
+			spawnSettings = false;
 		}
 	}
 
@@ -57,6 +61,7 @@ public class TitleScreenManager : MonoBehaviour
 	public void onSettings ()
 	{
 		clicked = "Settings";
+		spawnSettings = true;
 		toggleUIInteraction ();
 	}
 
