@@ -951,7 +951,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   errorText: {fileID: 116972, guid: 57b618eb7d6dd1d4cb2603c8ac972165, type: 2}
-  settingsMenu: {fileID: 0}
+  settingsMenu: {fileID: 174472, guid: 1614ca2aeb697e04daf6ee7f0b367c20, type: 2}
   canvas: {fileID: 326474734}
   playButton: {fileID: 1428050125}
   settingsButton: {fileID: 1254982403}

@@ -49,9 +49,17 @@ public class TitleScreenManager : MonoBehaviour
 			GameObject obj = (GameObject)Instantiate (settingsMenu, new Vector3 (0, 0, 0), Quaternion.identity);
 			obj.transform.SetParent (canvas.transform, false);
 			spawnSettings = false;
+
+			Button backButton = obj.GetComponentInChildren<Button>();
+			backButton.onClick.AddListener(() => removeSettings(obj));
 		}
 	}
-
+	
+	void removeSettings(GameObject obj) 
+	{
+		Destroy (obj);
+		toggleUIInteraction ();
+	}
 
 	public void onSettings ()
 	{
