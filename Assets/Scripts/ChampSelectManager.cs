@@ -13,7 +13,7 @@ using SimpleJSON;
 
 public class ChampSelectManager : MonoBehaviour
 {
-	const string DATA_FILE_PATH = "Data\\champion_simple.json";
+	private static string DATA_FILE_PATH = Path.Combine ("Data", "champion_simple.json");
 	public static int NUM_CHAMPIONS = 10;
 	public static string champ;
 	public static JSONNode jsonData;
