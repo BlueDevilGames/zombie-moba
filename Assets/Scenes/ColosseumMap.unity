@@ -86,7 +86,7 @@ NavMeshSettings:
     minRegionArea: 2
     cellSize: .166666657
     manualCellSize: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 84ce3c746fc1545c9afe05560afd2c2d, type: 2}
 --- !u!1 &5893527
 GameObject:
   m_ObjectHideFlags: 0
@@ -98,6 +98,9 @@ GameObject:
   - 33: {fileID: 5893530}
   - 136: {fileID: 5893529}
   - 23: {fileID: 5893528}
+  - 114: {fileID: 5893532}
+  - 54: {fileID: 5893533}
+  - 208: {fileID: 5893534}
   m_Layer: 0
   m_Name: EastNorthInhib
   m_TagString: Untagged
@@ -156,11 +159,62 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 5893527}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 22, y: 0, z: 7}
-  m_LocalScale: {x: 1, y: 2, z: 2}
+  m_LocalPosition: {x: 22, y: 1, z: 7}
+  m_LocalScale: {x: 1, y: 1, z: 2}
   m_Children: []
   m_Father: {fileID: 334441625}
   m_RootOrder: 0
+--- !u!114 &5893532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 5893527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fa21505ba5ee4161b6cfc758eb3474d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseHealth: 2000
+  healthPerLevel: 0
+  baseArmor: 0
+  armorPerLevel: 0
+  team: 2
+  baseHealthRegen: 0
+  healthRegenPerLevel: 0
+  baseAttackDamage: 0
+  attackDamagePerLevel: 0
+  timer: {fileID: 0}
+--- !u!54 &5893533
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 5893527}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!208 &5893534
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 5893527}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: .5, y: 1, z: .5}
+  m_MoveThreshold: .100000001
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: .5
 --- !u!1 &185740421
 GameObject:
   m_ObjectHideFlags: 0
@@ -172,6 +226,7 @@ GameObject:
   - 33: {fileID: 185740425}
   - 65: {fileID: 185740424}
   - 23: {fileID: 185740423}
+  - 208: {fileID: 185740426}
   m_Layer: 0
   m_Name: WallSouth
   m_TagString: Untagged
@@ -186,8 +241,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 185740421}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
-  m_LocalScale: {x: 60, y: 4, z: 1}
+  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalScale: {x: 60, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 244561944}
   m_RootOrder: 0
@@ -234,6 +289,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 185740421}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!208 &185740426
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 185740421}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: .5, y: .5, z: .5}
+  m_MoveThreshold: .100000001
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: .5
 --- !u!1 &216510244
 GameObject:
   m_ObjectHideFlags: 0
@@ -242,6 +312,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 216510245}
+  - 54: {fileID: 216510246}
   m_Layer: 0
   m_Name: Walls
   m_TagString: Untagged
@@ -267,6 +338,21 @@ Transform:
   - {fileID: 1204884507}
   m_Father: {fileID: 0}
   m_RootOrder: 4
+--- !u!54 &216510246
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 216510244}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &244561943
 GameObject:
   m_ObjectHideFlags: 0
@@ -309,6 +395,9 @@ GameObject:
   - 33: {fileID: 277885309}
   - 136: {fileID: 277885308}
   - 23: {fileID: 277885307}
+  - 114: {fileID: 277885311}
+  - 54: {fileID: 277885312}
+  - 208: {fileID: 277885313}
   m_Layer: 0
   m_Name: WestNorthInhib
   m_TagString: Untagged
@@ -367,11 +456,62 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 277885306}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -22, y: 0, z: 7}
-  m_LocalScale: {x: 1, y: 2, z: 2}
+  m_LocalPosition: {x: -22, y: 1, z: 7}
+  m_LocalScale: {x: 1, y: 1, z: 2}
   m_Children: []
   m_Father: {fileID: 334441625}
   m_RootOrder: 1
+--- !u!114 &277885311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 277885306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fa21505ba5ee4161b6cfc758eb3474d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseHealth: 2000
+  healthPerLevel: 0
+  baseArmor: 0
+  armorPerLevel: 0
+  team: 1
+  baseHealthRegen: 0
+  healthRegenPerLevel: 0
+  baseAttackDamage: 0
+  attackDamagePerLevel: 0
+  timer: {fileID: 0}
+--- !u!54 &277885312
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 277885306}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!208 &277885313
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 277885306}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: .5, y: 1, z: .5}
+  m_MoveThreshold: .100000001
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: .5
 --- !u!1 &306124309
 GameObject:
   m_ObjectHideFlags: 0
@@ -450,8 +590,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 306124309}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalRotation: {x: .18811439, y: .561615109, z: -.116235025, w: .797302246}
+  m_LocalPosition: {x: -.230000004, y: 6.38000011, z: -5.42999983}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -498,6 +638,7 @@ GameObject:
   - 33: {fileID: 378386828}
   - 65: {fileID: 378386827}
   - 23: {fileID: 378386826}
+  - 208: {fileID: 378386829}
   m_Layer: 0
   m_Name: EastBaseGateCenter
   m_TagString: Untagged
@@ -512,8 +653,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 378386824}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14, y: 0, z: 0}
-  m_LocalScale: {x: 6, y: 4, z: 10}
+  m_LocalPosition: {x: 14, y: 1, z: 0}
+  m_LocalScale: {x: 6, y: 2, z: 10}
   m_Children: []
   m_Father: {fileID: 1204884507}
   m_RootOrder: 2
@@ -560,6 +701,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 378386824}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!208 &378386829
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 378386824}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: .5, y: .5, z: .5}
+  m_MoveThreshold: .100000001
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: .5
 --- !u!1 &502345555
 GameObject:
   m_ObjectHideFlags: 0
@@ -571,6 +727,7 @@ GameObject:
   - 33: {fileID: 502345559}
   - 65: {fileID: 502345558}
   - 23: {fileID: 502345557}
+  - 208: {fileID: 502345560}
   m_Layer: 0
   m_Name: WallWest
   m_TagString: Untagged
@@ -585,8 +742,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 502345555}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -30, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 4, z: 20}
+  m_LocalPosition: {x: -30, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 2, z: 20}
   m_Children: []
   m_Father: {fileID: 244561944}
   m_RootOrder: 2
@@ -633,6 +790,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 502345555}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!208 &502345560
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 502345555}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: .5, y: .5, z: .5}
+  m_MoveThreshold: .100000001
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: .5
 --- !u!1 &510258529
 GameObject:
   m_ObjectHideFlags: 0
@@ -644,6 +816,10 @@ GameObject:
   - 33: {fileID: 510258533}
   - 136: {fileID: 510258532}
   - 23: {fileID: 510258531}
+  - 114: {fileID: 510258534}
+  - 54: {fileID: 510258535}
+  - 208: {fileID: 510258536}
+  - 135: {fileID: 510258537}
   m_Layer: 0
   m_Name: Cylinder 1
   m_TagString: Untagged
@@ -658,8 +834,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 510258529}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8, y: 0, z: 7}
-  m_LocalScale: {x: 1, y: 5, z: 1}
+  m_LocalPosition: {x: -8, y: 2, z: 7}
+  m_LocalScale: {x: 1, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 804669400}
   m_RootOrder: 11
@@ -707,6 +883,69 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 510258529}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &510258534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 510258529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bdca2b53e7314ec5ab37d041dbd7589, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseHealth: 2000
+  healthPerLevel: 0
+  baseArmor: 50
+  armorPerLevel: 0
+  team: 1
+  baseHealthRegen: 0
+  healthRegenPerLevel: 0
+  baseAttackDamage: 200
+  attackDamagePerLevel: 0
+  timer: {fileID: 0}
+--- !u!54 &510258535
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 510258529}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!208 &510258536
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 510258529}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: .5, y: 1, z: .5}
+  m_MoveThreshold: .100000001
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: .5
+--- !u!135 &510258537
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 510258529}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2
+  m_Center: {x: 0, y: -1, z: 0}
 --- !u!1 &510335386
 GameObject:
   m_ObjectHideFlags: 0
@@ -718,6 +957,10 @@ GameObject:
   - 33: {fileID: 510335390}
   - 136: {fileID: 510335389}
   - 23: {fileID: 510335388}
+  - 114: {fileID: 510335391}
+  - 54: {fileID: 510335392}
+  - 208: {fileID: 510335393}
+  - 135: {fileID: 510335394}
   m_Layer: 0
   m_Name: Cylinder 11
   m_TagString: Untagged
@@ -732,8 +975,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 510335386}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 23, y: 0, z: -2}
-  m_LocalScale: {x: 1, y: 5, z: 1}
+  m_LocalPosition: {x: 23, y: 2, z: -2}
+  m_LocalScale: {x: 1, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 804669400}
   m_RootOrder: 3
@@ -781,6 +1024,69 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 510335386}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &510335391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 510335386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bdca2b53e7314ec5ab37d041dbd7589, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseHealth: 2000
+  healthPerLevel: 0
+  baseArmor: 50
+  armorPerLevel: 0
+  team: 2
+  baseHealthRegen: 0
+  healthRegenPerLevel: 0
+  baseAttackDamage: 200
+  attackDamagePerLevel: 0
+  timer: {fileID: 0}
+--- !u!54 &510335392
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 510335386}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!208 &510335393
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 510335386}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: .5, y: 1, z: .5}
+  m_MoveThreshold: .100000001
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: .5
+--- !u!135 &510335394
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 510335386}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2
+  m_Center: {x: 0, y: -1, z: 0}
 --- !u!1 &554873109
 GameObject:
   m_ObjectHideFlags: 0
@@ -792,6 +1098,7 @@ GameObject:
   - 33: {fileID: 554873113}
   - 65: {fileID: 554873112}
   - 23: {fileID: 554873111}
+  - 208: {fileID: 554873114}
   m_Layer: 0
   m_Name: WestBaseGateNorth
   m_TagString: Untagged
@@ -806,8 +1113,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 554873109}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -16, y: 0, z: 9}
-  m_LocalScale: {x: 1, y: 4, z: 2}
+  m_LocalPosition: {x: -16, y: 1, z: 9}
+  m_LocalScale: {x: 1, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 828610411}
   m_RootOrder: 0
@@ -854,6 +1161,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 554873109}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!208 &554873114
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 554873109}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: .5, y: .5, z: .5}
+  m_MoveThreshold: .100000001
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: .5
 --- !u!1 &596078293
 GameObject:
   m_ObjectHideFlags: 0
@@ -865,6 +1187,10 @@ GameObject:
   - 33: {fileID: 596078297}
   - 136: {fileID: 596078296}
   - 23: {fileID: 596078295}
+  - 114: {fileID: 596078298}
+  - 54: {fileID: 596078299}
+  - 208: {fileID: 596078300}
+  - 135: {fileID: 596078301}
   m_Layer: 0
   m_Name: Cylinder 6
   m_TagString: Untagged
@@ -879,8 +1205,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 596078293}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20, y: 0, z: 7}
-  m_LocalScale: {x: 1, y: 5, z: 1}
+  m_LocalPosition: {x: -20, y: 2, z: 7}
+  m_LocalScale: {x: 1, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 804669400}
   m_RootOrder: 5
@@ -928,6 +1254,69 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 596078293}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &596078298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 596078293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bdca2b53e7314ec5ab37d041dbd7589, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseHealth: 2000
+  healthPerLevel: 0
+  baseArmor: 50
+  armorPerLevel: 0
+  team: 1
+  baseHealthRegen: 0
+  healthRegenPerLevel: 0
+  baseAttackDamage: 200
+  attackDamagePerLevel: 0
+  timer: {fileID: 0}
+--- !u!54 &596078299
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 596078293}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!208 &596078300
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 596078293}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: .5, y: 1, z: .5}
+  m_MoveThreshold: .100000001
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: .5
+--- !u!135 &596078301
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 596078293}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2
+  m_Center: {x: 0, y: -1, z: 0}
 --- !u!1 &643398159
 GameObject:
   m_ObjectHideFlags: 0
@@ -944,7 +1333,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &643398160
 MeshRenderer:
@@ -1012,6 +1401,7 @@ GameObject:
   - 33: {fileID: 675606341}
   - 65: {fileID: 675606340}
   - 23: {fileID: 675606339}
+  - 208: {fileID: 675606343}
   m_Layer: 0
   m_Name: MiddleWallSouth
   m_TagString: Untagged
@@ -1069,11 +1459,26 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 675606338}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -5}
-  m_LocalScale: {x: 14, y: 4, z: .5}
+  m_LocalPosition: {x: 0, y: 1, z: -5}
+  m_LocalScale: {x: 14, y: 2, z: .5}
   m_Children: []
   m_Father: {fileID: 216510245}
   m_RootOrder: 1
+--- !u!208 &675606343
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 675606338}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: .5, y: .5, z: .5}
+  m_MoveThreshold: .100000001
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: .5
 --- !u!1 &709516152
 GameObject:
   m_ObjectHideFlags: 0
@@ -1085,6 +1490,9 @@ GameObject:
   - 33: {fileID: 709516155}
   - 136: {fileID: 709516154}
   - 23: {fileID: 709516153}
+  - 114: {fileID: 709516158}
+  - 54: {fileID: 709516157}
+  - 208: {fileID: 709516159}
   m_Layer: 0
   m_Name: EastNexus
   m_TagString: Untagged
@@ -1143,11 +1551,67 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 709516152}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 24, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 4}
+  m_LocalPosition: {x: 25, y: 1, z: 0}
+  m_LocalScale: {x: 2, y: 1, z: 4}
   m_Children: []
   m_Father: {fileID: 1325211454}
   m_RootOrder: 1
+--- !u!54 &709516157
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 709516152}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!114 &709516158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 709516152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00709064a31c44cdb95cbbc31de55b06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseHealth: 3000
+  healthPerLevel: 0
+  baseArmor: 0
+  armorPerLevel: 0
+  team: 2
+  baseHealthRegen: 0
+  healthRegenPerLevel: 0
+  baseAttackDamage: 0
+  attackDamagePerLevel: 0
+  timer: {fileID: 1306549056}
+  minionToSpawn: {fileID: 140160, guid: 222131fa218724b4ca181c47cf3a1fa4, type: 2}
+  minionSpawnLocationTop: {x: 25, y: 0, z: 4}
+  minionSpawnLocationBot: {x: 25, y: 0, z: -4}
+  minionDestLocationTop: {x: -25, y: 0, z: 4}
+  minionDestLocationBot: {x: -25, y: 0, z: -4}
+--- !u!208 &709516159
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 709516152}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: .5, y: 1, z: .5}
+  m_MoveThreshold: .100000001
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: .5
 --- !u!1 &720448633
 GameObject:
   m_ObjectHideFlags: 0
@@ -1159,11 +1623,12 @@ GameObject:
   - 33: {fileID: 720448636}
   - 65: {fileID: 720448635}
   - 23: {fileID: 720448634}
+  - 208: {fileID: 720448638}
   m_Layer: 0
   m_Name: MiddleWallCenter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!23 &720448634
@@ -1216,11 +1681,26 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 720448633}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 14, y: 4, z: 5}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 14, y: 2, z: 5}
   m_Children: []
   m_Father: {fileID: 216510245}
   m_RootOrder: 0
+--- !u!208 &720448638
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 720448633}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: .5, y: .5, z: .5}
+  m_MoveThreshold: .100000001
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: .5
 --- !u!1 &732676449
 GameObject:
   m_ObjectHideFlags: 0
@@ -1232,6 +1712,10 @@ GameObject:
   - 33: {fileID: 732676453}
   - 136: {fileID: 732676452}
   - 23: {fileID: 732676451}
+  - 114: {fileID: 732676454}
+  - 54: {fileID: 732676455}
+  - 208: {fileID: 732676456}
+  - 135: {fileID: 732676457}
   m_Layer: 0
   m_Name: Cylinder 3
   m_TagString: Untagged
@@ -1246,8 +1730,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 732676449}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8, y: 0, z: -7}
-  m_LocalScale: {x: 1, y: 5, z: 1}
+  m_LocalPosition: {x: 8, y: 2, z: -7}
+  m_LocalScale: {x: 1, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 804669400}
   m_RootOrder: 8
@@ -1295,6 +1779,69 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 732676449}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &732676454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 732676449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bdca2b53e7314ec5ab37d041dbd7589, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseHealth: 2000
+  healthPerLevel: 0
+  baseArmor: 50
+  armorPerLevel: 0
+  team: 2
+  baseHealthRegen: 0
+  healthRegenPerLevel: 0
+  baseAttackDamage: 200
+  attackDamagePerLevel: 0
+  timer: {fileID: 0}
+--- !u!54 &732676455
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 732676449}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!208 &732676456
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 732676449}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: .5, y: 1, z: .5}
+  m_MoveThreshold: .100000001
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: .5
+--- !u!135 &732676457
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 732676449}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2
+  m_Center: {x: 0, y: -1, z: 0}
 --- !u!1 &804669399
 GameObject:
   m_ObjectHideFlags: 0
@@ -1375,6 +1922,10 @@ GameObject:
   - 33: {fileID: 860020766}
   - 136: {fileID: 860020765}
   - 23: {fileID: 860020764}
+  - 114: {fileID: 860020767}
+  - 54: {fileID: 860020768}
+  - 208: {fileID: 860020769}
+  - 135: {fileID: 860020770}
   m_Layer: 0
   m_Name: Cylinder 4
   m_TagString: Untagged
@@ -1389,8 +1940,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 860020762}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20, y: 0, z: -7}
-  m_LocalScale: {x: 1, y: 5, z: 1}
+  m_LocalPosition: {x: 20, y: 2, z: -7}
+  m_LocalScale: {x: 1, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 804669400}
   m_RootOrder: 7
@@ -1438,6 +1989,69 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 860020762}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &860020767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 860020762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bdca2b53e7314ec5ab37d041dbd7589, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseHealth: 2000
+  healthPerLevel: 0
+  baseArmor: 50
+  armorPerLevel: 0
+  team: 2
+  baseHealthRegen: 0
+  healthRegenPerLevel: 0
+  baseAttackDamage: 200
+  attackDamagePerLevel: 0
+  timer: {fileID: 0}
+--- !u!54 &860020768
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 860020762}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!208 &860020769
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 860020762}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: .5, y: 1, z: .5}
+  m_MoveThreshold: .100000001
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: .5
+--- !u!135 &860020770
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 860020762}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2
+  m_Center: {x: 0, y: -1, z: 0}
 --- !u!1 &866611746
 GameObject:
   m_ObjectHideFlags: 0
@@ -1449,6 +2063,10 @@ GameObject:
   - 33: {fileID: 866611749}
   - 136: {fileID: 866611748}
   - 23: {fileID: 866611747}
+  - 114: {fileID: 866611751}
+  - 54: {fileID: 866611752}
+  - 208: {fileID: 866611753}
+  - 135: {fileID: 866611754}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -1507,11 +2125,74 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 866611746}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8, y: 0, z: 7}
-  m_LocalScale: {x: 1, y: 5, z: 1}
+  m_LocalPosition: {x: 8, y: 2, z: 7}
+  m_LocalScale: {x: 1, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 804669400}
   m_RootOrder: 10
+--- !u!114 &866611751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 866611746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bdca2b53e7314ec5ab37d041dbd7589, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseHealth: 2000
+  healthPerLevel: 0
+  baseArmor: 50
+  armorPerLevel: 0
+  team: 2
+  baseHealthRegen: 0
+  healthRegenPerLevel: 0
+  baseAttackDamage: 200
+  attackDamagePerLevel: 0
+  timer: {fileID: 0}
+--- !u!54 &866611752
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 866611746}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!208 &866611753
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 866611746}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: .5, y: 1, z: .5}
+  m_MoveThreshold: .100000001
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: .5
+--- !u!135 &866611754
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 866611746}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2
+  m_Center: {x: 0, y: -1, z: 0}
 --- !u!1 &982489114
 GameObject:
   m_ObjectHideFlags: 0
@@ -1523,6 +2204,9 @@ GameObject:
   - 33: {fileID: 982489117}
   - 136: {fileID: 982489116}
   - 23: {fileID: 982489115}
+  - 114: {fileID: 982489119}
+  - 54: {fileID: 982489120}
+  - 208: {fileID: 982489121}
   m_Layer: 0
   m_Name: WestSouthInhib
   m_TagString: Untagged
@@ -1581,11 +2265,62 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 982489114}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -22, y: 0, z: -7}
-  m_LocalScale: {x: 1, y: 2, z: 2}
+  m_LocalPosition: {x: -22, y: 1, z: -7}
+  m_LocalScale: {x: 1, y: 1, z: 2}
   m_Children: []
   m_Father: {fileID: 334441625}
   m_RootOrder: 3
+--- !u!114 &982489119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 982489114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fa21505ba5ee4161b6cfc758eb3474d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseHealth: 2000
+  healthPerLevel: 0
+  baseArmor: 0
+  armorPerLevel: 0
+  team: 1
+  baseHealthRegen: 0
+  healthRegenPerLevel: 0
+  baseAttackDamage: 0
+  attackDamagePerLevel: 0
+  timer: {fileID: 0}
+--- !u!54 &982489120
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 982489114}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!208 &982489121
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 982489114}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: .5, y: 1, z: .5}
+  m_MoveThreshold: .100000001
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: .5
 --- !u!1 &985480268
 GameObject:
   m_ObjectHideFlags: 0
@@ -1597,6 +2332,7 @@ GameObject:
   - 33: {fileID: 985480272}
   - 65: {fileID: 985480271}
   - 23: {fileID: 985480270}
+  - 208: {fileID: 985480273}
   m_Layer: 0
   m_Name: WestBaseGateSouth
   m_TagString: Untagged
@@ -1611,8 +2347,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 985480268}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -16, y: 0, z: -9}
-  m_LocalScale: {x: 1, y: 4, z: 2}
+  m_LocalPosition: {x: -16, y: 1, z: -9}
+  m_LocalScale: {x: 1, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 828610411}
   m_RootOrder: 1
@@ -1659,6 +2395,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 985480268}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!208 &985480273
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 985480268}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: .5, y: .5, z: .5}
+  m_MoveThreshold: .100000001
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: .5
 --- !u!1 &1045293615
 GameObject:
   m_ObjectHideFlags: 0
@@ -1670,6 +2421,7 @@ GameObject:
   - 33: {fileID: 1045293619}
   - 65: {fileID: 1045293618}
   - 23: {fileID: 1045293617}
+  - 208: {fileID: 1045293620}
   m_Layer: 0
   m_Name: WallNorth
   m_TagString: Untagged
@@ -1684,8 +2436,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1045293615}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 10}
-  m_LocalScale: {x: 60, y: 4, z: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 10}
+  m_LocalScale: {x: 60, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 244561944}
   m_RootOrder: 1
@@ -1732,6 +2484,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1045293615}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!208 &1045293620
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1045293615}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: .5, y: .5, z: .5}
+  m_MoveThreshold: .100000001
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: .5
 --- !u!1 &1204884506
 GameObject:
   m_ObjectHideFlags: 0
@@ -1762,6 +2529,45 @@ Transform:
   - {fileID: 378386825}
   m_Father: {fileID: 216510245}
   m_RootOrder: 5
+--- !u!1 &1306549055
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1306549057}
+  - 114: {fileID: 1306549056}
+  m_Layer: 0
+  m_Name: GameTimer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1306549056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1306549055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71ab22c5f18e24bb294e55ca1165a5b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1306549057
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1306549055}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -10, z: -0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
 --- !u!1 &1325211453
 GameObject:
   m_ObjectHideFlags: 0
@@ -1802,6 +2608,10 @@ GameObject:
   - 33: {fileID: 1396891387}
   - 136: {fileID: 1396891386}
   - 23: {fileID: 1396891385}
+  - 114: {fileID: 1396891388}
+  - 54: {fileID: 1396891389}
+  - 208: {fileID: 1396891390}
+  - 135: {fileID: 1396891391}
   m_Layer: 0
   m_Name: Cylinder 10
   m_TagString: Untagged
@@ -1816,8 +2626,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1396891383}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -23, y: 0, z: -2}
-  m_LocalScale: {x: 1, y: 5, z: 1}
+  m_LocalPosition: {x: -23, y: 2, z: -2}
+  m_LocalScale: {x: 1, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 804669400}
   m_RootOrder: 2
@@ -1865,6 +2675,69 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1396891383}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1396891388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1396891383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bdca2b53e7314ec5ab37d041dbd7589, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseHealth: 2000
+  healthPerLevel: 0
+  baseArmor: 50
+  armorPerLevel: 0
+  team: 1
+  baseHealthRegen: 0
+  healthRegenPerLevel: 0
+  baseAttackDamage: 200
+  attackDamagePerLevel: 0
+  timer: {fileID: 0}
+--- !u!54 &1396891389
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1396891383}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!208 &1396891390
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1396891383}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: .5, y: 1, z: .5}
+  m_MoveThreshold: .100000001
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: .5
+--- !u!135 &1396891391
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1396891383}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2
+  m_Center: {x: 0, y: -1, z: 0}
 --- !u!1 &1406017540
 GameObject:
   m_ObjectHideFlags: 0
@@ -1876,6 +2749,7 @@ GameObject:
   - 33: {fileID: 1406017544}
   - 65: {fileID: 1406017543}
   - 23: {fileID: 1406017542}
+  - 208: {fileID: 1406017545}
   m_Layer: 0
   m_Name: WallEast
   m_TagString: Untagged
@@ -1890,8 +2764,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1406017540}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 30, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 4, z: 20}
+  m_LocalPosition: {x: 30, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 2, z: 20}
   m_Children: []
   m_Father: {fileID: 244561944}
   m_RootOrder: 3
@@ -1938,6 +2812,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1406017540}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!208 &1406017545
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1406017540}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: .5, y: .5, z: .5}
+  m_MoveThreshold: .100000001
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: .5
 --- !u!1 &1418808735
 GameObject:
   m_ObjectHideFlags: 0
@@ -1949,6 +2838,7 @@ GameObject:
   - 33: {fileID: 1418808739}
   - 65: {fileID: 1418808738}
   - 23: {fileID: 1418808737}
+  - 208: {fileID: 1418808740}
   m_Layer: 0
   m_Name: EastBaseGateNorth
   m_TagString: Untagged
@@ -1963,8 +2853,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1418808735}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16, y: 0, z: 9}
-  m_LocalScale: {x: 1, y: 4, z: 2}
+  m_LocalPosition: {x: 16, y: 1, z: 9}
+  m_LocalScale: {x: 1, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 1204884507}
   m_RootOrder: 1
@@ -2011,6 +2901,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1418808735}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!208 &1418808740
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1418808735}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: .5, y: .5, z: .5}
+  m_MoveThreshold: .100000001
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: .5
 --- !u!1 &1585237677
 GameObject:
   m_ObjectHideFlags: 0
@@ -2082,11 +2987,12 @@ GameObject:
   - 33: {fileID: 1611562981}
   - 65: {fileID: 1611562980}
   - 23: {fileID: 1611562979}
+  - 208: {fileID: 1611562982}
   m_Layer: 0
   m_Name: WestBaseGateCenter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1611562978
@@ -2096,8 +3002,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1611562977}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14, y: 0, z: 0}
-  m_LocalScale: {x: 6, y: 4, z: 10}
+  m_LocalPosition: {x: -14, y: 1, z: 0}
+  m_LocalScale: {x: 6, y: 2, z: 10}
   m_Children: []
   m_Father: {fileID: 828610411}
   m_RootOrder: 2
@@ -2144,6 +3050,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1611562977}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!208 &1611562982
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1611562977}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: .5, y: .5, z: .5}
+  m_MoveThreshold: .100000001
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: .5
 --- !u!1 &1619796715
 GameObject:
   m_ObjectHideFlags: 0
@@ -2155,6 +3076,9 @@ GameObject:
   - 33: {fileID: 1619796718}
   - 136: {fileID: 1619796717}
   - 23: {fileID: 1619796716}
+  - 114: {fileID: 1619796721}
+  - 54: {fileID: 1619796720}
+  - 208: {fileID: 1619796722}
   m_Layer: 0
   m_Name: WestNexus
   m_TagString: Untagged
@@ -2213,11 +3137,67 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1619796715}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -24, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 4}
+  m_LocalPosition: {x: -25, y: 1, z: 0}
+  m_LocalScale: {x: 2, y: 1, z: 4}
   m_Children: []
   m_Father: {fileID: 1325211454}
   m_RootOrder: 0
+--- !u!54 &1619796720
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1619796715}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!114 &1619796721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1619796715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00709064a31c44cdb95cbbc31de55b06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseHealth: 3000
+  healthPerLevel: 0
+  baseArmor: 0
+  armorPerLevel: 0
+  team: 1
+  baseHealthRegen: 0
+  healthRegenPerLevel: 0
+  baseAttackDamage: 0
+  attackDamagePerLevel: 0
+  timer: {fileID: 1306549056}
+  minionToSpawn: {fileID: 140160, guid: 222131fa218724b4ca181c47cf3a1fa4, type: 2}
+  minionSpawnLocationTop: {x: -25, y: 0, z: 4}
+  minionSpawnLocationBot: {x: -25, y: 0, z: -4}
+  minionDestLocationTop: {x: 25, y: 0, z: 4}
+  minionDestLocationBot: {x: 25, y: 0, z: -4}
+--- !u!208 &1619796722
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1619796715}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: .5, y: 1, z: .5}
+  m_MoveThreshold: .100000001
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: .5
 --- !u!1 &1634816221
 GameObject:
   m_ObjectHideFlags: 0
@@ -2229,6 +3209,7 @@ GameObject:
   - 33: {fileID: 1634816225}
   - 65: {fileID: 1634816224}
   - 23: {fileID: 1634816223}
+  - 208: {fileID: 1634816226}
   m_Layer: 0
   m_Name: EastBaseGateSouth
   m_TagString: Untagged
@@ -2243,8 +3224,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1634816221}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16, y: 0, z: -9}
-  m_LocalScale: {x: 1, y: 4, z: 2}
+  m_LocalPosition: {x: 16, y: 1, z: -9}
+  m_LocalScale: {x: 1, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 1204884507}
   m_RootOrder: 0
@@ -2291,6 +3272,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1634816221}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!208 &1634816226
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1634816221}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: .5, y: .5, z: .5}
+  m_MoveThreshold: .100000001
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: .5
 --- !u!1 &1684911400
 GameObject:
   m_ObjectHideFlags: 0
@@ -2302,6 +3298,10 @@ GameObject:
   - 33: {fileID: 1684911404}
   - 136: {fileID: 1684911403}
   - 23: {fileID: 1684911402}
+  - 114: {fileID: 1684911405}
+  - 54: {fileID: 1684911406}
+  - 208: {fileID: 1684911407}
+  - 135: {fileID: 1684911408}
   m_Layer: 0
   m_Name: Cylinder 7
   m_TagString: Untagged
@@ -2316,8 +3316,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1684911400}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20, y: 0, z: 7}
-  m_LocalScale: {x: 1, y: 5, z: 1}
+  m_LocalPosition: {x: 20, y: 2, z: 7}
+  m_LocalScale: {x: 1, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 804669400}
   m_RootOrder: 4
@@ -2365,6 +3365,69 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1684911400}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1684911405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1684911400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bdca2b53e7314ec5ab37d041dbd7589, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseHealth: 2000
+  healthPerLevel: 0
+  baseArmor: 50
+  armorPerLevel: 0
+  team: 2
+  baseHealthRegen: 0
+  healthRegenPerLevel: 0
+  baseAttackDamage: 200
+  attackDamagePerLevel: 0
+  timer: {fileID: 0}
+--- !u!54 &1684911406
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1684911400}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!208 &1684911407
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1684911400}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: .5, y: 1, z: .5}
+  m_MoveThreshold: .100000001
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: .5
+--- !u!135 &1684911408
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1684911400}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2
+  m_Center: {x: 0, y: -1, z: 0}
 --- !u!1 &1710708788
 GameObject:
   m_ObjectHideFlags: 0
@@ -2376,6 +3439,10 @@ GameObject:
   - 33: {fileID: 1710708792}
   - 136: {fileID: 1710708791}
   - 23: {fileID: 1710708790}
+  - 114: {fileID: 1710708793}
+  - 54: {fileID: 1710708794}
+  - 208: {fileID: 1710708795}
+  - 135: {fileID: 1710708796}
   m_Layer: 0
   m_Name: Cylinder 9
   m_TagString: Untagged
@@ -2390,8 +3457,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1710708788}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -23, y: 0, z: 2}
-  m_LocalScale: {x: 1, y: 5, z: 1}
+  m_LocalPosition: {x: -23, y: 2, z: 2}
+  m_LocalScale: {x: 1, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 804669400}
   m_RootOrder: 1
@@ -2439,6 +3506,69 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1710708788}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1710708793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1710708788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bdca2b53e7314ec5ab37d041dbd7589, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseHealth: 2000
+  healthPerLevel: 0
+  baseArmor: 50
+  armorPerLevel: 0
+  team: 1
+  baseHealthRegen: 0
+  healthRegenPerLevel: 0
+  baseAttackDamage: 200
+  attackDamagePerLevel: 0
+  timer: {fileID: 0}
+--- !u!54 &1710708794
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1710708788}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!208 &1710708795
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1710708788}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: .5, y: 1, z: .5}
+  m_MoveThreshold: .100000001
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: .5
+--- !u!135 &1710708796
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1710708788}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2
+  m_Center: {x: 0, y: -1, z: 0}
 --- !u!1 &1748138682
 GameObject:
   m_ObjectHideFlags: 0
@@ -2450,6 +3580,9 @@ GameObject:
   - 33: {fileID: 1748138685}
   - 136: {fileID: 1748138684}
   - 23: {fileID: 1748138683}
+  - 114: {fileID: 1748138687}
+  - 54: {fileID: 1748138688}
+  - 208: {fileID: 1748138689}
   m_Layer: 0
   m_Name: EastSouthInhib
   m_TagString: Untagged
@@ -2508,11 +3641,62 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1748138682}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 22, y: 0, z: -7}
-  m_LocalScale: {x: 1, y: 2, z: 2}
+  m_LocalPosition: {x: 22, y: 1, z: -7}
+  m_LocalScale: {x: 1, y: 1, z: 2}
   m_Children: []
   m_Father: {fileID: 334441625}
   m_RootOrder: 2
+--- !u!114 &1748138687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1748138682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fa21505ba5ee4161b6cfc758eb3474d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseHealth: 2000
+  healthPerLevel: 0
+  baseArmor: 0
+  armorPerLevel: 0
+  team: 2
+  baseHealthRegen: 0
+  healthRegenPerLevel: 0
+  baseAttackDamage: 0
+  attackDamagePerLevel: 0
+  timer: {fileID: 0}
+--- !u!54 &1748138688
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1748138682}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!208 &1748138689
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1748138682}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: .5, y: 1, z: .5}
+  m_MoveThreshold: .100000001
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: .5
 --- !u!1 &1799132932
 GameObject:
   m_ObjectHideFlags: 0
@@ -2524,6 +3708,10 @@ GameObject:
   - 33: {fileID: 1799132936}
   - 136: {fileID: 1799132935}
   - 23: {fileID: 1799132934}
+  - 114: {fileID: 1799132937}
+  - 54: {fileID: 1799132938}
+  - 208: {fileID: 1799132939}
+  - 135: {fileID: 1799132940}
   m_Layer: 0
   m_Name: Cylinder 2
   m_TagString: Untagged
@@ -2538,8 +3726,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1799132932}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8, y: 0, z: -7}
-  m_LocalScale: {x: 1, y: 5, z: 1}
+  m_LocalPosition: {x: -8, y: 2, z: -7}
+  m_LocalScale: {x: 1, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 804669400}
   m_RootOrder: 9
@@ -2587,6 +3775,69 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1799132932}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1799132937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1799132932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bdca2b53e7314ec5ab37d041dbd7589, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseHealth: 2000
+  healthPerLevel: 0
+  baseArmor: 50
+  armorPerLevel: 0
+  team: 1
+  baseHealthRegen: 0
+  healthRegenPerLevel: 0
+  baseAttackDamage: 200
+  attackDamagePerLevel: 0
+  timer: {fileID: 0}
+--- !u!54 &1799132938
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1799132932}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!208 &1799132939
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1799132932}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: .5, y: 1, z: .5}
+  m_MoveThreshold: .100000001
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: .5
+--- !u!135 &1799132940
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1799132932}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2
+  m_Center: {x: 0, y: -1, z: 0}
 --- !u!1 &1940948750
 GameObject:
   m_ObjectHideFlags: 0
@@ -2598,6 +3849,7 @@ GameObject:
   - 33: {fileID: 1940948753}
   - 65: {fileID: 1940948752}
   - 23: {fileID: 1940948751}
+  - 208: {fileID: 1940948755}
   m_Layer: 0
   m_Name: MiddleWallNorth
   m_TagString: Untagged
@@ -2655,11 +3907,26 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1940948750}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 5}
-  m_LocalScale: {x: 14, y: 4, z: .5}
+  m_LocalPosition: {x: 0, y: 1, z: 5}
+  m_LocalScale: {x: 14, y: 2, z: .5}
   m_Children: []
   m_Father: {fileID: 216510245}
   m_RootOrder: 2
+--- !u!208 &1940948755
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1940948750}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: .5, y: .5, z: .5}
+  m_MoveThreshold: .100000001
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: .5
 --- !u!1 &1973653757
 GameObject:
   m_ObjectHideFlags: 0
@@ -2671,6 +3938,10 @@ GameObject:
   - 33: {fileID: 1973653761}
   - 136: {fileID: 1973653760}
   - 23: {fileID: 1973653759}
+  - 114: {fileID: 1973653762}
+  - 54: {fileID: 1973653763}
+  - 208: {fileID: 1973653764}
+  - 135: {fileID: 1973653765}
   m_Layer: 0
   m_Name: Cylinder 8
   m_TagString: Untagged
@@ -2685,8 +3956,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1973653757}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 23, y: 0, z: 2}
-  m_LocalScale: {x: 1, y: 5, z: 1}
+  m_LocalPosition: {x: 23, y: 2, z: 2}
+  m_LocalScale: {x: 1, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 804669400}
   m_RootOrder: 0
@@ -2734,6 +4005,69 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1973653757}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1973653762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1973653757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bdca2b53e7314ec5ab37d041dbd7589, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseHealth: 2000
+  healthPerLevel: 0
+  baseArmor: 50
+  armorPerLevel: 0
+  team: 2
+  baseHealthRegen: 0
+  healthRegenPerLevel: 0
+  baseAttackDamage: 200
+  attackDamagePerLevel: 0
+  timer: {fileID: 0}
+--- !u!54 &1973653763
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1973653757}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!208 &1973653764
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1973653757}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: .5, y: 1, z: .5}
+  m_MoveThreshold: .100000001
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: .5
+--- !u!135 &1973653765
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1973653757}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2
+  m_Center: {x: 0, y: -1, z: 0}
 --- !u!1 &2033753383
 GameObject:
   m_ObjectHideFlags: 0
@@ -2745,6 +4079,10 @@ GameObject:
   - 33: {fileID: 2033753387}
   - 136: {fileID: 2033753386}
   - 23: {fileID: 2033753385}
+  - 114: {fileID: 2033753388}
+  - 54: {fileID: 2033753389}
+  - 208: {fileID: 2033753390}
+  - 135: {fileID: 2033753391}
   m_Layer: 0
   m_Name: Cylinder 5
   m_TagString: Untagged
@@ -2759,8 +4097,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2033753383}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20, y: 0, z: -7}
-  m_LocalScale: {x: 1, y: 5, z: 1}
+  m_LocalPosition: {x: -20, y: 2, z: -7}
+  m_LocalScale: {x: 1, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 804669400}
   m_RootOrder: 6
@@ -2808,3 +4146,66 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2033753383}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2033753388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2033753383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bdca2b53e7314ec5ab37d041dbd7589, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseHealth: 2000
+  healthPerLevel: 0
+  baseArmor: 50
+  armorPerLevel: 0
+  team: 1
+  baseHealthRegen: 0
+  healthRegenPerLevel: 0
+  baseAttackDamage: 200
+  attackDamagePerLevel: 0
+  timer: {fileID: 0}
+--- !u!54 &2033753389
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2033753383}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!208 &2033753390
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2033753383}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: .5, y: 1, z: .5}
+  m_MoveThreshold: .100000001
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: .5
+--- !u!135 &2033753391
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2033753383}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2
+  m_Center: {x: 0, y: -1, z: 0}

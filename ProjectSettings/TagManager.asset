@@ -5,7 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Champion
-  - New Tag
+  - westminion
+  - eastminion
   layers:
   - Default
   - TransparentFX
