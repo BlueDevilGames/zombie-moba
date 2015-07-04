@@ -37,8 +37,8 @@ public class Nexus : Static {
 			minionBot.GetComponent<Minion>().team = team;
 			minionTop.transform.position = minionSpawnLocationTop;
 			minionBot.transform.position = minionSpawnLocationBot;
-			minionTop.SendMessage("SetDestination", minionDestLocationTop);
-			minionBot.SendMessage("SetDestination", minionDestLocationBot);
+			minionTop.SendMessage("SetFinalDestination", minionDestLocationTop);
+			minionBot.SendMessage("SetFinalDestination", minionDestLocationBot);
 		}
 
 		timeOneFrameAgo = curTime;

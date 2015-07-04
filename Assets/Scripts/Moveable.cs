@@ -8,9 +8,13 @@ public class Moveable : Unit {
 	protected Unit target;
 	protected int curSpeed;
 
+	protected NavMeshAgent agent;
+
 	// Use this for initialization
 	public override void Start () {
 		curSpeed = baseSpeed;
+		agent = GetComponentInParent<NavMeshAgent> ();
+		agent.speed = baseSpeed;
 		base.Start ();
 	}
 	

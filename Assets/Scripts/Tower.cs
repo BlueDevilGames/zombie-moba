@@ -3,12 +3,10 @@ using System.Collections;
 
 public class Tower : Static {
 
-	Queue queue;
 	Unit target;
 	
 	// Use this for initialization
 	public override void Start () {
-		queue = new Queue ();
 		base.Start ();
 	}
 	
@@ -22,20 +20,20 @@ public class Tower : Static {
 	}
 
 	void OnTriggerEnter(Collider other) {
-
-		if (other.gameObject.GetComponent<Minion>() != null) {
-			Minion minion = other.gameObject.GetComponent<Minion>();
-			if(minion.team != team) {
-				minion.GetComponent<NavMeshAgent>().SetDestination(GetComponent<Transform>().position);
-				minion.updateTarget(this);
-				if(target == null) {
-					target = minion;
-				}
-				else {
-					queue.Enqueue(minion);
-				}
+		GameObject obj = other.gameObject;
+		Unit unit = obj.GetComponent<Unit> ();
+		if (unit!=null && unit.team != team  && unit.team!=0) {
+			if(target == null) {
+				target = unit;
 			}
+			unitsInRange.Add(unit);
 		}
-
+	}
+	
+	void OnTriggerExit(Collider other) {
+		Unit unit = other.gameObject.GetComponent<Unit> ();
+		if (unit != null) {
+			unitsInRange.Remove (other.gameObject.GetComponent<Unit>());
+		}
 	}
 }

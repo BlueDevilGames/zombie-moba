@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Unit : MonoBehaviour {
 
@@ -18,11 +19,14 @@ public class Unit : MonoBehaviour {
 	protected int curHealthRegen;
 	protected int curAttackDamage;
 	protected int level;
+	protected List<Unit> unitsInRange;
+
 
 	// Use this for initialization
 	public virtual void Start () {
 		level = 1;
 		updateStats ();
+		unitsInRange = new List<Unit> ();
 //		Debug.Log(curHealth + " " + curArmor + " " + curHealthRegen + " " + curAttackDamage);
 	}
 	
@@ -59,6 +63,27 @@ public class Unit : MonoBehaviour {
 		curHealth = baseHealth + (healthPerLevel * level);
 		curHealthRegen = baseHealthRegen + (healthRegenPerLevel * level);
 		curAttackDamage = baseAttackDamage + (attackDamagePerLevel * level);
+	}
+
+	public bool isDead() {
+		return curHealth < 0;
+	}
+
+	public Unit GetClosestUnit() {
+		unitsInRange.RemoveAll (item => item == null);
+		float dist = float.MaxValue;
+		Unit closestUnit = null;
+		foreach (Unit unit in unitsInRange) {
+			float distToUnit = Vector3.Distance(GetComponentInParent<Transform>().position, unit.GetComponentInParent<Transform>().position);
+			if(distToUnit < dist) {
+				closestUnit = unit;
+			}
+		}
+		return closestUnit;
+	}
+
+	protected void attack(Unit unit) {
+
 	}
 
 }
