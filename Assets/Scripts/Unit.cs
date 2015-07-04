@@ -34,11 +34,9 @@ public class Unit : MonoBehaviour {
 	}
 
 	public void TakeDamage(int unmodifiedDamage) {
-		if (curArmor == 0) {
-			curHealth -= unmodifiedDamage;
-		} else {
-			curHealth -= unmodifiedDamage * (1 - (100 / curArmor));
-		}
+
+		curHealth -= unmodifiedDamage * (1 - (curArmor / (curArmor + 100)));
+
 	}
 
 	void CheckIfDead() {

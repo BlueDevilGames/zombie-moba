@@ -20,7 +20,7 @@ AnimatorController:
     m_DefaultWeight: 0
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_MultiThreadedStateMachine: 1
 --- !u!1107 &110770468
 AnimatorStateMachine:
@@ -38,7 +38,7 @@ AnimatorStateMachine:
       first: {fileID: 110770468}
       second: []
   m_StateMachineBehaviours: []
-  m_AnyStatePosition: {x: 336, y: -24, z: 0}
+  m_AnyStatePosition: {x: 336, y: -12, z: 0}
   m_EntryPosition: {x: 336, y: 72, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
