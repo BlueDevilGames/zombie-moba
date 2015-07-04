@@ -14,9 +14,9 @@ public class Timer : MonoBehaviour
 {
 	public string timeLimitText = "Time: {0}s";
 	public float timeLeft = 90;
-
+	
 	private Text timeLimit;
-
+	
 	// Use this for initialization
 	void Start ()
 	{
@@ -33,7 +33,7 @@ public class Timer : MonoBehaviour
 		} else {
 			timeLeft -= Time.deltaTime;
 		}
-
+		
 		//update timeLimitText
 		timeLimit.text = string.Format (timeLimitText, Mathf.FloorToInt (timeLeft));
 	}
