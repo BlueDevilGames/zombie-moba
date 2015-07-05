@@ -31,14 +31,17 @@ public class Nexus : Static {
 
 	void SpawnMinion(int curTime) {
 		if (curTime%5 == 0 && curTime > timeOneFrameAgo) {
-			GameObject minionTop = Instantiate(minionToSpawn);
-			GameObject minionBot = Instantiate(minionToSpawn);
+			GameObject minionTop = (GameObject) Instantiate(minionToSpawn, minionSpawnLocationTop, Quaternion.identity);
+			GameObject minionBot = (GameObject) Instantiate(minionToSpawn, minionSpawnLocationBot, Quaternion.identity);
 			minionTop.GetComponent<Minion>().team = team;
 			minionBot.GetComponent<Minion>().team = team;
-			minionTop.transform.position = minionSpawnLocationTop;
-			minionBot.transform.position = minionSpawnLocationBot;
-			minionTop.SendMessage("SetFinalDestination", minionDestLocationTop);
-			minionBot.SendMessage("SetFinalDestination", minionDestLocationBot);
+			minionTop.GetComponent<Minion>().SetFinalDestination(minionDestLocationTop);
+			minionBot.GetComponent<Minion>().SetFinalDestination(minionDestLocationBot);
+
+			
+			
+			//			minionTop.SendMessage("SetFinalDestination", minionDestLocationTop);
+//			minionBot.SendMessage("SetFinalDestination", minionDestLocationBot);
 		}
 
 		timeOneFrameAgo = curTime;

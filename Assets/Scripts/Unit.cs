@@ -27,7 +27,6 @@ public class Unit : MonoBehaviour {
 		level = 1;
 		updateStats ();
 		unitsInRange = new List<Unit> ();
-//		Debug.Log(curHealth + " " + curArmor + " " + curHealthRegen + " " + curAttackDamage);
 	}
 	
 	// Update is called once per frame

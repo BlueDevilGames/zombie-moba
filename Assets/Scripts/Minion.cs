@@ -50,18 +50,10 @@ public class Minion : Moveable {
 	}
 	
 	void doTargetActions() {
-		Debug.Log (this);
-		Debug.Log (target);
 		if (target == null || target.Equals (null)) { //second equals is in case of a destroyed (dead) object
 			if (unitsInRange.Count > 0) {
-				Unit unit = GetClosestUnit ();
+				Unit unit = GetClosestUnit (); //this function could possibly change the size of unitsInRange to 0
 				target = unit;
-				if(target!=null) {
-					setDestination (target.GetComponentInParent<Transform> ().position);
-				}
-				else {
-					setDestination (destination);
-				}
 			} 
 			else {
 				setDestination (destination);

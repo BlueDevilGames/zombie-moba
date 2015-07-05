@@ -15,6 +15,7 @@ GameObject:
   - 195: {fileID: 19570708}
   - 54: {fileID: 5476464}
   - 95: {fileID: 9507446}
+  - 135: {fileID: 13537108}
   m_Layer: 0
   m_Name: miniongeneration
   m_TagString: westminion
@@ -29,7 +30,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 140160}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -21.6700001, y: 1.34000003, z: -.50999999}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: .5, y: .300000012, z: .5}
   m_Children: []
   m_Father: {fileID: 0}
@@ -119,6 +120,18 @@ MonoBehaviour:
   attackDamagePerLevel: 1
   baseSpeed: 2
   attackRange: 2
+--- !u!135 &13537108
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 140160}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 6
+  m_Center: {x: 0, y: -1, z: 0}
 --- !u!136 &13658708
 CapsuleCollider:
   m_ObjectHideFlags: 1
