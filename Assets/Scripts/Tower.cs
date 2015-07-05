@@ -13,8 +13,8 @@ public class Tower : Static {
 	// Update is called once per frame
 	public override void Update () {
 		if (target != null) {
-			//ONLY DO THIS AT A CERTAIN RATE, needs a fix
-			target.TakeDamage(curAttackDamage);
+			attack(target);
+//			target.TakeDamage(curAttackDamage);
 		}
 		base.Update ();
 	}

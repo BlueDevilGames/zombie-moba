@@ -184,6 +184,7 @@ MonoBehaviour:
   healthRegenPerLevel: 0
   baseAttackDamage: 0
   attackDamagePerLevel: 0
+  baseAttackSpeed: 0
   timer: {fileID: 0}
 --- !u!54 &5893533
 Rigidbody:
@@ -481,6 +482,7 @@ MonoBehaviour:
   healthRegenPerLevel: 0
   baseAttackDamage: 0
   attackDamagePerLevel: 0
+  baseAttackSpeed: 0
   timer: {fileID: 0}
 --- !u!54 &277885312
 Rigidbody:
@@ -901,8 +903,9 @@ MonoBehaviour:
   team: 1
   baseHealthRegen: 0
   healthRegenPerLevel: 0
-  baseAttackDamage: 1
+  baseAttackDamage: 100
   attackDamagePerLevel: 0
+  baseAttackSpeed: 1
   timer: {fileID: 0}
 --- !u!54 &510258535
 Rigidbody:
@@ -1042,8 +1045,9 @@ MonoBehaviour:
   team: 2
   baseHealthRegen: 0
   healthRegenPerLevel: 0
-  baseAttackDamage: 1
+  baseAttackDamage: 100
   attackDamagePerLevel: 0
+  baseAttackSpeed: 1
   timer: {fileID: 0}
 --- !u!54 &510335392
 Rigidbody:
@@ -1272,8 +1276,9 @@ MonoBehaviour:
   team: 1
   baseHealthRegen: 0
   healthRegenPerLevel: 0
-  baseAttackDamage: 1
+  baseAttackDamage: 100
   attackDamagePerLevel: 0
+  baseAttackSpeed: 1
   timer: {fileID: 0}
 --- !u!54 &596078299
 Rigidbody:
@@ -1591,6 +1596,7 @@ MonoBehaviour:
   healthRegenPerLevel: 0
   baseAttackDamage: 0
   attackDamagePerLevel: 0
+  baseAttackSpeed: 0
   timer: {fileID: 1306549056}
   minionToSpawn: {fileID: 140160, guid: 222131fa218724b4ca181c47cf3a1fa4, type: 2}
   minionSpawnLocationTop: {x: 25, y: 0, z: 4}
@@ -1797,8 +1803,9 @@ MonoBehaviour:
   team: 2
   baseHealthRegen: 0
   healthRegenPerLevel: 0
-  baseAttackDamage: 1
+  baseAttackDamage: 100
   attackDamagePerLevel: 0
+  baseAttackSpeed: 1
   timer: {fileID: 0}
 --- !u!54 &732676455
 Rigidbody:
@@ -2007,8 +2014,9 @@ MonoBehaviour:
   team: 2
   baseHealthRegen: 0
   healthRegenPerLevel: 0
-  baseAttackDamage: 1
+  baseAttackDamage: 100
   attackDamagePerLevel: 0
+  baseAttackSpeed: 1
   timer: {fileID: 0}
 --- !u!54 &860020768
 Rigidbody:
@@ -2148,8 +2156,9 @@ MonoBehaviour:
   team: 2
   baseHealthRegen: 0
   healthRegenPerLevel: 0
-  baseAttackDamage: 1
+  baseAttackDamage: 100
   attackDamagePerLevel: 0
+  baseAttackSpeed: 1
   timer: {fileID: 0}
 --- !u!54 &866611752
 Rigidbody:
@@ -2290,6 +2299,7 @@ MonoBehaviour:
   healthRegenPerLevel: 0
   baseAttackDamage: 0
   attackDamagePerLevel: 0
+  baseAttackSpeed: 0
   timer: {fileID: 0}
 --- !u!54 &982489120
 Rigidbody:
@@ -2540,7 +2550,7 @@ GameObject:
   - 114: {fileID: 1306549056}
   m_Layer: 0
   m_Name: GameTimer
-  m_TagString: Untagged
+  m_TagString: gameTimer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2693,8 +2703,9 @@ MonoBehaviour:
   team: 1
   baseHealthRegen: 0
   healthRegenPerLevel: 0
-  baseAttackDamage: 1
+  baseAttackDamage: 100
   attackDamagePerLevel: 0
+  baseAttackSpeed: 1
   timer: {fileID: 0}
 --- !u!54 &1396891389
 Rigidbody:
@@ -3177,6 +3188,7 @@ MonoBehaviour:
   healthRegenPerLevel: 0
   baseAttackDamage: 0
   attackDamagePerLevel: 0
+  baseAttackSpeed: 0
   timer: {fileID: 1306549056}
   minionToSpawn: {fileID: 140160, guid: 222131fa218724b4ca181c47cf3a1fa4, type: 2}
   minionSpawnLocationTop: {x: -25, y: 0, z: 4}
@@ -3383,8 +3395,9 @@ MonoBehaviour:
   team: 2
   baseHealthRegen: 0
   healthRegenPerLevel: 0
-  baseAttackDamage: 1
+  baseAttackDamage: 100
   attackDamagePerLevel: 0
+  baseAttackSpeed: 1
   timer: {fileID: 0}
 --- !u!54 &1684911406
 Rigidbody:
@@ -3524,8 +3537,9 @@ MonoBehaviour:
   team: 1
   baseHealthRegen: 0
   healthRegenPerLevel: 0
-  baseAttackDamage: 1
+  baseAttackDamage: 100
   attackDamagePerLevel: 0
+  baseAttackSpeed: 1
   timer: {fileID: 0}
 --- !u!54 &1710708794
 Rigidbody:
@@ -3666,6 +3680,7 @@ MonoBehaviour:
   healthRegenPerLevel: 0
   baseAttackDamage: 0
   attackDamagePerLevel: 0
+  baseAttackSpeed: 0
   timer: {fileID: 0}
 --- !u!54 &1748138688
 Rigidbody:
@@ -3793,8 +3808,9 @@ MonoBehaviour:
   team: 1
   baseHealthRegen: 0
   healthRegenPerLevel: 0
-  baseAttackDamage: 1
+  baseAttackDamage: 100
   attackDamagePerLevel: 0
+  baseAttackSpeed: 1
   timer: {fileID: 0}
 --- !u!54 &1799132938
 Rigidbody:
@@ -4023,8 +4039,9 @@ MonoBehaviour:
   team: 2
   baseHealthRegen: 0
   healthRegenPerLevel: 0
-  baseAttackDamage: 1
+  baseAttackDamage: 100
   attackDamagePerLevel: 0
+  baseAttackSpeed: 1
   timer: {fileID: 0}
 --- !u!54 &1973653763
 Rigidbody:
@@ -4164,8 +4181,9 @@ MonoBehaviour:
   team: 1
   baseHealthRegen: 0
   healthRegenPerLevel: 0
-  baseAttackDamage: 1
+  baseAttackDamage: 100
   attackDamagePerLevel: 0
+  baseAttackSpeed: 1
   timer: {fileID: 0}
 --- !u!54 &2033753389
 Rigidbody:

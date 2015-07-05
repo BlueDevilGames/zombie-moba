@@ -13,19 +13,25 @@ public class Unit : MonoBehaviour {
 	public int healthRegenPerLevel;
 	public int baseAttackDamage;
 	public int attackDamagePerLevel;
+	public float baseAttackSpeed; //attack speed is in units of seconds/attack, so the lower it is, the faster the attack is
 
 	protected int curHealth;
 	protected int curArmor;
 	protected int curHealthRegen;
 	protected int curAttackDamage;
+	protected float curAttackSpeed;
 	protected int level;
 	protected List<Unit> unitsInRange;
 
+	int lastAtkTime;
+	GameTimer gameTimer;
 
 	// Use this for initialization
 	public virtual void Start () {
+		gameTimer = GameObject.FindGameObjectWithTag ("gameTimer").GetComponent<GameTimer>();
 		level = 1;
 		updateStats ();
+		lastAtkTime = (int) (-1000 * curAttackSpeed);
 		unitsInRange = new List<Unit> ();
 	}
 	
@@ -49,7 +55,9 @@ public class Unit : MonoBehaviour {
 	}
 
 	void Regen() {
-		curHealth += curHealthRegen;
+		if (gameTimer.IsOnTheSecond ()) {
+			curHealth += curHealthRegen;
+		}
 	}
 
 	void LevelUp() {
@@ -62,6 +70,7 @@ public class Unit : MonoBehaviour {
 		curHealth = baseHealth + (healthPerLevel * level);
 		curHealthRegen = baseHealthRegen + (healthRegenPerLevel * level);
 		curAttackDamage = baseAttackDamage + (attackDamagePerLevel * level);
+		curAttackSpeed = baseAttackSpeed;
 	}
 
 	public bool isDead() {
@@ -82,7 +91,10 @@ public class Unit : MonoBehaviour {
 	}
 
 	protected void attack(Unit unit) {
-
+		if(gameTimer.GetCurrentTimeMillis() - (curAttackSpeed*1000) > lastAtkTime) {
+			unit.TakeDamage(curAttackDamage);
+			lastAtkTime = gameTimer.GetCurrentTimeMillis();
+		}
 	}
 
 }

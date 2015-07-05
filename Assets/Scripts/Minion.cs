@@ -61,7 +61,8 @@ public class Minion : Moveable {
 		} 
 		else if (Vector3.Distance (target.GetComponentInParent<Transform> ().position, GetComponentInParent<Transform> ().position) < attackRange) {
 			setDestination (GetComponentInParent<Transform> ().position);
-			target.TakeDamage (curAttackDamage);
+			attack(target);
+//			target.TakeDamage (curAttackDamage);
 		}
 		else {
 			setDestination (target.GetComponentInParent<Transform> ().position);

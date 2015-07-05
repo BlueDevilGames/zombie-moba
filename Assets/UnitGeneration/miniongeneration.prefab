@@ -116,8 +116,9 @@ MonoBehaviour:
   team: 0
   baseHealthRegen: 0
   healthRegenPerLevel: 0
-  baseAttackDamage: 8
+  baseAttackDamage: 20
   attackDamagePerLevel: 1
+  baseAttackSpeed: .5
   baseSpeed: 2
   attackRange: 2
 --- !u!135 &13537108

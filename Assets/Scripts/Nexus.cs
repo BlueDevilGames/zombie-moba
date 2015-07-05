@@ -9,17 +9,17 @@ public class Nexus : Static {
 	public Vector3 minionDestLocationTop;
 	public Vector3 minionDestLocationBot;
  	
-	int timeOneFrameAgo;
+//	int timeOneFrameAgo;
 
 	// Use this for initialization
 	public override void Start () {
-		timeOneFrameAgo = 0;
+//		timeOneFrameAgo = 0;
 		base.Start ();
 	}
 	
 	// Update is called once per frame
 	public override void Update () {
-		int curTime = timer.GetCurrentTime ();
+		int curTime = timer.GetCurrentTimeSec ();
 		SpawnMinion(curTime);
 		base.Update ();
 	}
@@ -30,7 +30,7 @@ public class Nexus : Static {
 	}
 
 	void SpawnMinion(int curTime) {
-		if (curTime%5 == 0 && curTime > timeOneFrameAgo) {
+		if (curTime%5 == 0 && timer.IsOnTheSecond()) {
 			GameObject minionTop = (GameObject) Instantiate(minionToSpawn, minionSpawnLocationTop, Quaternion.identity);
 			GameObject minionBot = (GameObject) Instantiate(minionToSpawn, minionSpawnLocationBot, Quaternion.identity);
 			minionTop.GetComponent<Minion>().team = team;
@@ -44,7 +44,7 @@ public class Nexus : Static {
 //			minionBot.SendMessage("SetFinalDestination", minionDestLocationBot);
 		}
 
-		timeOneFrameAgo = curTime;
+//		timeOneFrameAgo = curTime;
 	}
 
 }
