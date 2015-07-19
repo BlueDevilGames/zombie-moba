@@ -5,9 +5,12 @@ public class Minion : Moveable {
 
 	Vector3 destination;
 	bool attacking;
+	Animator animator;
 
 	// Use this for initialization
 	public override void Start () {
+		animator = GetComponentInParent<Animator> ();
+		Debug.Log (animator.hasRootMotion);
 		base.Start ();
 	}
 	
