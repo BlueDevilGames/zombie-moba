@@ -8,6 +8,7 @@ TagManager:
   - westminion
   - eastminion
   - gameTimer
+  - InGameGUI
   layers:
   - Default
   - TransparentFX
