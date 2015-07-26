@@ -101,6 +101,7 @@ GameObject:
   - 114: {fileID: 5893532}
   - 54: {fileID: 5893533}
   - 208: {fileID: 5893534}
+  - 65: {fileID: 5893535}
   m_Layer: 0
   m_Name: EastNorthInhib
   m_TagString: Untagged
@@ -216,6 +217,18 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: .5
+--- !u!65 &5893535
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 5893527}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 15, y: 2, z: 10}
+  m_Center: {x: 1, y: 0, z: -3.5}
 --- !u!1 &15757811
 GameObject:
   m_ObjectHideFlags: 0
@@ -733,7 +746,7 @@ Transform:
   - {fileID: 828610411}
   - {fileID: 1204884507}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
 --- !u!54 &216510246
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -794,6 +807,7 @@ GameObject:
   - 114: {fileID: 277885311}
   - 54: {fileID: 277885312}
   - 208: {fileID: 277885313}
+  - 65: {fileID: 277885314}
   m_Layer: 0
   m_Name: WestNorthInhib
   m_TagString: Untagged
@@ -909,6 +923,18 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: .5
+--- !u!65 &277885314
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 277885306}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 15, y: 2, z: 10}
+  m_Center: {x: -1, y: 0, z: -3.5}
 --- !u!1 &303197917
 GameObject:
   m_ObjectHideFlags: 0
@@ -1053,7 +1079,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!1 &314671350
 GameObject:
   m_ObjectHideFlags: 0
@@ -1211,7 +1237,7 @@ Transform:
   - {fileID: 1748138686}
   - {fileID: 982489118}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!1 &364043071
 GameObject:
   m_ObjectHideFlags: 0
@@ -1366,6 +1392,62 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: .5
+--- !u!1 &397571673
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 397571677}
+  - 65: {fileID: 397571675}
+  - 114: {fileID: 397571674}
+  m_Layer: 0
+  m_Name: WestInhibitorEffector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &397571674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 397571673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 585913380935e4c2fa6ac6738fdaaea9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inhibitors:
+  - {fileID: 277885311}
+  - {fileID: 982489119}
+  tickDamage: 3
+--- !u!65 &397571675
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 397571673}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 13, y: 1, z: 20}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &397571677
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 397571673}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -23, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 2, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
 --- !u!1 &417950175
 GameObject:
   m_ObjectHideFlags: 0
@@ -2605,7 +2687,63 @@ Transform:
   m_LocalScale: {x: 6, y: 1, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
+--- !u!1 &654351223
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 654351226}
+  - 65: {fileID: 654351225}
+  - 114: {fileID: 654351224}
+  m_Layer: 0
+  m_Name: EastInhibitorEffector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &654351224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 654351223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 585913380935e4c2fa6ac6738fdaaea9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inhibitors:
+  - {fileID: 5893532}
+  - {fileID: 1748138687}
+  tickDamage: 3
+--- !u!65 &654351225
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 654351223}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 13, y: 1, z: 20}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &654351226
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 654351223}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 23, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 2, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
 --- !u!1 &675606338
 GameObject:
   m_ObjectHideFlags: 0
@@ -3282,7 +3420,7 @@ Transform:
   - {fileID: 866611750}
   - {fileID: 510258530}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!1 &824347550
 GameObject:
   m_ObjectHideFlags: 0
@@ -3975,6 +4113,7 @@ GameObject:
   - 114: {fileID: 982489119}
   - 54: {fileID: 982489120}
   - 208: {fileID: 982489121}
+  - 65: {fileID: 982489122}
   m_Layer: 0
   m_Name: WestSouthInhib
   m_TagString: Untagged
@@ -4090,6 +4229,18 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: .5
+--- !u!65 &982489122
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 982489114}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 15, y: 2, z: 10}
+  m_Center: {x: -1, y: 0, z: 3.5}
 --- !u!1 &985480268
 GameObject:
   m_ObjectHideFlags: 0
@@ -4708,7 +4859,7 @@ RectTransform:
   - {fileID: 1160630440}
   - {fileID: 28397292}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -4840,7 +4991,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
 --- !u!1 &1325211453
 GameObject:
   m_ObjectHideFlags: 0
@@ -4869,7 +5020,7 @@ Transform:
   - {fileID: 1619796719}
   - {fileID: 709516156}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!1 &1340904125
 GameObject:
   m_ObjectHideFlags: 0
@@ -5819,7 +5970,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
 --- !u!1 &1597045186
 GameObject:
   m_ObjectHideFlags: 0
@@ -6734,6 +6885,7 @@ GameObject:
   - 114: {fileID: 1748138687}
   - 54: {fileID: 1748138688}
   - 208: {fileID: 1748138689}
+  - 65: {fileID: 1748138690}
   m_Layer: 0
   m_Name: EastSouthInhib
   m_TagString: Untagged
@@ -6849,6 +7001,18 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: .5
+--- !u!65 &1748138690
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1748138682}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 15, y: 2, z: 10}
+  m_Center: {x: 1, y: 0, z: 3.5}
 --- !u!1 &1793982853
 GameObject:
   m_ObjectHideFlags: 0
@@ -7369,7 +7533,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
 --- !u!1 &1958259574
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class Inhibitor : Static {
-
+	
 	// Use this for initialization
 	public override void Start () {
 		base.Start ();
