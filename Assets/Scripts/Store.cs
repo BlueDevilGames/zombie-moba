@@ -10,6 +10,7 @@ public class Store : MonoBehaviour {
 	void Start () {
 		storeToggle = true;
 		inGameGUI = GameObject.FindGameObjectWithTag("InGameGUI");
+		GameObject.
 	}
 	
 	// Update is called once per frame
@@ -17,7 +18,7 @@ public class Store : MonoBehaviour {
 		if(Input.GetKeyDown("i")) {
 			storeToggle = !storeToggle;
 			inGameGUI.SetActive(storeToggle);
-			GetComponent<Renderer>().enabled = !storeToggle;
+
 		}
 	}
 }
